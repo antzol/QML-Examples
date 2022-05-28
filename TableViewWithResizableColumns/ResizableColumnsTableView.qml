@@ -20,7 +20,7 @@ Rectangle {
             id: horizontalHeader
 
             reuseItems: false
-            syncView: multicastTableView
+            syncView: tableView
             height: 30
             Layout.fillWidth: true
             boundsBehavior:Flickable.StopAtBounds
@@ -50,7 +50,7 @@ Rectangle {
                     onXChanged: {
                         if (dragArea.drag.active) {
                             table.columnWidths[index] = splitter.x + width;
-                            multicastTableView.forceLayout();
+                            tableView.forceLayout();
                         }
                     }
                 } // Rectangle splitter
@@ -71,7 +71,7 @@ Rectangle {
         } // HorizontalHeaderView
 
         TableView {
-            id: multicastTableView
+            id: tableView
             Layout.fillWidth: true
             Layout.fillHeight: true
             clip: true
